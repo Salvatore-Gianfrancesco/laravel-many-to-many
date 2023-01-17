@@ -1,9 +1,9 @@
 @extends('layouts.admin')
 
 @section('content')
-<div class="container">
+<div class="container my-4">
     <div class="d-flex justify-content-between align-items-center">
-        <h1 class="my-4">Projects</h1>
+        <h1>Projects</h1>
         <a href="{{Route('admin.projects.create')}}" class="btn btn-primary new_project"><i class="fa-solid fa-plus"></i></a>
     </div>
 
@@ -54,11 +54,11 @@
                                 <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered modal-sm" role="document">
                                     <div class="modal-content">
                                         <div class="modal-header">
-                                            <h5 class="modal-title" id="modalTitleId-{{$project->id}}">Eliminazione progetto</h5>
+                                            <h5 class="modal-title" id="modalTitleId-{{$project->id}}">Delete project?</h5>
                                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                         </div>
                                         <div class="modal-body">
-                                            Sei sicuro di voler eliminare questo progetto? L'azione è irreversibile
+                                            Are you sure you want to delete this project? The action is irreversible!
                                         </div>
                                         <div class="modal-footer">
                                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>

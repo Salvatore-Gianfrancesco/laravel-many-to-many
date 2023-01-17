@@ -1,8 +1,8 @@
 @extends('layouts.admin')
 
 @section('content')
-<div class="container">
-    <h1 class="my-4">Editing Project: {{$project->name}}</h1>
+<div class="container my-4">
+    <h1>Editing Project: {{$project->name}}</h1>
 
     @if ($errors->any())
     <div class="alert alert-danger">
@@ -72,7 +72,7 @@
             </select>
         </div>
 
-        <button type="submit" class="btn btn-primary">Submit</button>
+        <button type="submit" class="btn btn-primary">Edit</button>
     </form>
 </div>
 @endsection
