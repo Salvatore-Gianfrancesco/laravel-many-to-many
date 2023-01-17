@@ -15,7 +15,9 @@
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 
     <!-- FontAwesome CDN -->
-    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css' integrity='sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==' crossorigin='anonymous' referrerpolicy='no-referrer' />
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css'
+        integrity='sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=='
+        crossorigin='anonymous' referrerpolicy='no-referrer' />
 
     <!-- Usando Vite -->
     @vite(['resources/js/app.js'])
@@ -27,10 +29,12 @@
             <nav class="navbar navbar-expand-md navbar-dark bg-dark h-100">
                 <div class="container">
                     <!-- logo -->
-                    <a class="navbar-brand" href="{{Route('home')}}">Boolfolio</a>
+                    <a class="navbar-brand" href="{{ Route('home') }}">Boolfolio</a>
 
                     <!-- dropdown menu (when page resized) -->
-                    <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavId, #sidebarMenu" aria-controls="collapsibleNavId, sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
+                    <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapsibleNavId, #sidebarMenu" aria-controls="collapsibleNavId, sidebarMenu"
+                        aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
 
@@ -38,7 +42,7 @@
                     <div class="collapse navbar-collapse" id="collapsibleNavId">
                         <ul class="navbar-nav me-auto mt-2 mt-lg-0">
                             <li class="nav-item">
-                                <a class="nav-link" href="{{Route('home')}}">Home</a>
+                                <a class="nav-link" href="{{ Route('home') }}">Home</a>
                             </li>
                         </ul>
 
@@ -57,21 +61,31 @@
                     <div class="position-sticky pt-3 sidebar-sticky">
                         <ul class="nav flex-column">
                             <li class="nav-item">
-                                <a class="nav-link {{Route::currentRouteName() === 'admin.dashboard' ? 'active' : ''}}" aria-current="page" href="{{Route('admin.dashboard')}}">
+                                <a class="nav-link {{ Route::currentRouteName() === 'admin.dashboard' ? 'active' : '' }}"
+                                    aria-current="page" href="{{ Route('admin.dashboard') }}">
                                     <span data-feather="home" class="align-text-bottom"></span>
                                     Dashboard
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link {{Route::currentRouteName() === 'admin.projects.index' ? 'active' : ''}}" href="{{Route('admin.projects.index')}}">
+                                <a class="nav-link {{ Route::currentRouteName() === 'admin.projects.index' ? 'active' : '' }}"
+                                    href="{{ Route('admin.projects.index') }}">
                                     <span data-feather="file" class="align-text-bottom"></span>
                                     Projects
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link {{Route::currentRouteName() === 'admin.types.index' ? 'active' : ''}}" href="{{Route('admin.types.index')}}">
+                                <a class="nav-link {{ Route::currentRouteName() === 'admin.types.index' ? 'active' : '' }}"
+                                    href="{{ Route('admin.types.index') }}">
                                     <span data-feather="file" class="align-text-bottom"></span>
                                     Types
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link {{ Route::currentRouteName() === 'admin.technologies.index' ? 'active' : '' }}"
+                                    href="{{ Route('admin.technologies.index') }}">
+                                    <span data-feather="file" class="align-text-bottom"></span>
+                                    Technologies
                                 </a>
                             </li>
                         </ul>
