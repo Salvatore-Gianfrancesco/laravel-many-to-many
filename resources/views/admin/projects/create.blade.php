@@ -1,8 +1,8 @@
 @extends('layouts.admin')
 
 @section('content')
-<div class="container">
-    <h1 class="my-4">Create new Project</h1>
+<div class="container my-4">
+    <h1>Create new Project</h1>
 
     @if ($errors->any())
     <div class="alert alert-danger">
@@ -40,6 +40,23 @@
                 @foreach($types as $type)
                 <option value="{{$type->id}}">{{$type->name}}</option>
                 @endforeach
+            </select>
+        </div>
+
+        <div class="mb-3">
+            <label for="technologies" class="form-label">Technologies</label>
+            <select multiple class="form-select" name="technologies[]" id="technologies">
+                <option value="null" disabled>Select a technology</option>
+
+                @forelse ($technologies as $technology)
+                @if ($errors->any())
+                <option value="{{$technology->id}}" {{ in_array($technology->id, old('technologies', [])) ? 'selected' : '' }}>{{$technology->name}}</option>
+                @else
+                <option value="{{$technology->id}}">{{$technology->name}}</option>
+                @endif
+                @empty
+                <option value="null" disabled>No technologies</option>
+                @endforelse
             </select>
         </div>
 

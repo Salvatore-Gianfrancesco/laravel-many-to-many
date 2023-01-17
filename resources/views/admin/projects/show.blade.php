@@ -10,6 +10,17 @@
         <h2 class="my-4">{{$project->name}}</h2>
         <p>{{$project->body}}</p>
         <div><strong>Type</strong>: {{$project->type ? $project->type->name : 'no type'}}</div>
+        <div>
+            <strong>Technologies</strong>:
+            
+            @if(count($project->technologies) > 0 )
+                @foreach ($project->technologies as $technology)
+                <span>{{$technology->name}} </span>
+                @endforeach
+            @else
+            <span>No technologies</span>
+            @endif
+        </div>
     </div>
 </div>
 
