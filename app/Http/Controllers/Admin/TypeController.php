@@ -4,7 +4,8 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Type;
-use Illuminate\Http\Request;
+use App\Http\Requests\StoreTypesRequest;
+use App\Http\Requests\UpdateTypesRequest;
 use Illuminate\Support\Str;
 
 class TypeController extends Controller
@@ -28,7 +29,7 @@ class TypeController extends Controller
      */
     public function create()
     {
-        return view('admin.types.create');
+        //
     }
 
     /**
@@ -37,7 +38,7 @@ class TypeController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StoreTypesRequest $request)
     {
         $type = new Type();
         $type->name = $request['name'];
@@ -66,7 +67,7 @@ class TypeController extends Controller
      */
     public function edit(Type $type)
     {
-        return view('admin.types.edit', compact('type'));
+        //
     }
 
     /**
@@ -76,7 +77,7 @@ class TypeController extends Controller
      * @param  \App\Models\Type  $type
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Type $type)
+    public function update(UpdateTypesRequest $request, Type $type)
     {
         $type->name = $request['name'];
         $type->slug = Str::slug($type->name);
